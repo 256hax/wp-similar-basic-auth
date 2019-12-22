@@ -33,7 +33,7 @@ Notice: Delete plugin on your PC.
 
 
 ## Test
-### Run
+### Run PHPUnit
 Starting vagrant(VCCW).
 ```
 mac$ cd [vccw directory]
@@ -62,6 +62,14 @@ vagrant@vccw$ phpcs -p -s -v --standard=WordPress-Core [file name]
 Fix auto.
 ```
 vagrant@vccw$ phpcbf -p -s -v --standard=WordPress-Core [file name]
+```
+
+
+### Check
+`vagrand ssh` and `cd [plugin directory]`
+Notice: do not run on fish shell.
+```
+vagrant@vccw$ ~/vendor/bin/phpcs -p . --standard=PHPCompatibilityWP
 ```
 
 
