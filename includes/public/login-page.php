@@ -2,6 +2,8 @@
 
 /**
  * Similar Basi Auth Login Page on Front-End
+ *
+ * @package Wp_Similar_Basic_Auth
  */
 class Hax_Wsba_Login_Page
 {

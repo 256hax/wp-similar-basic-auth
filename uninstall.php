@@ -15,7 +15,7 @@ function run_hax_wsba_uninstall()
     global $hax_wsba_config;
     $hax_wsba_config = new Hax_Wsba_Config();
 
-    /*--- Delete all options data ---*/
+    /*--- Delete all WP Options data ---*/
     delete_option($hax_wsba_config->register_settings_title);
     delete_option($hax_wsba_config->register_settings_message);
     delete_option($hax_wsba_config->register_settings_user_name);

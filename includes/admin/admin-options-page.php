@@ -2,6 +2,8 @@
 
 /**
  * WP Admin Options Page
+ *
+ * @package Wp_Similar_Basic_Auth
  */
 // [Call No.3]
 class Hax_Wsba_Admin_Options_Page

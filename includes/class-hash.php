@@ -1,5 +1,9 @@
 <?php
-
+/**
+ * Class Hax_Wsba_Hash
+ *
+ * @package Wp_Similar_Basic_Auth
+ */
 class Hax_Wsba_Hash
 {
 

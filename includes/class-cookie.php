@@ -1,6 +1,6 @@
 <?php
 /**
- * Class LoginPageTest
+ * Class Hax_Wsba_Cookie
  *
  * @package Wp_Similar_Basic_Auth
  */
