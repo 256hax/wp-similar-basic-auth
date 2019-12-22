@@ -52,6 +52,18 @@ Run phpunit.
 vagrant@vccw$ phpunit
 ```
 
+### Fix for coding starndards
+Check fix.
+`vagrand ssh` and `cd [plugin directory]`
+```
+vagrant@vccw$ phpcs -p -s -v --standard=WordPress-Core [file name]
+```
+
+Fix auto.
+```
+vagrant@vccw$ phpcbf -p -s -v --standard=WordPress-Core [file name]
+```
+
 
 ## i18n
 ### Generate POT file
