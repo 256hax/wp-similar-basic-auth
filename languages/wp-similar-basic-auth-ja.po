@@ -1,0 +1,78 @@
+# Copyright (C) 2019 Wp Similar Basic Auth
+# This file is distributed under the same license as the Wp Similar Basic Auth package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Wp Similar Basic Auth 0.1.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wp-similar-basic-"
+"auth\n"
+"POT-Creation-Date: 2019-12-01 15:45:30+00:00\n"
+"PO-Revision-Date: 2019-12-02 00:47+0900\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2.4\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: includes/admin/views/html-admin-options-page.php:15
+msgid "Login Title"
+msgstr "ログインタイトル"
+
+#: includes/admin/views/html-admin-options-page.php:19
+msgid "Login Message"
+msgstr "ログインメッセージ"
+
+#: includes/admin/views/html-admin-options-page.php:23
+#: includes/public/views/html-login-page.php:42
+msgid "User Name"
+msgstr "ユーザー名"
+
+#: includes/admin/views/html-admin-options-page.php:24
+#: includes/admin/views/html-admin-options-page.php:37
+msgid "(alphanumerics, numbers, symbols. Can't be blank)"
+msgstr "(英数字、記号のみ。空白にすることはできません)"
+
+#: includes/admin/views/html-admin-options-page.php:27
+#: includes/public/views/html-login-page.php:46
+msgid "Password"
+msgstr "パスワード"
+
+#: includes/admin/views/html-admin-options-page.php:32
+msgid "No Change (Use current password)"
+msgstr "変更しない （現在のパスワードを利用）"
+
+#: includes/admin/views/html-admin-options-page.php:35
+msgid "New Password"
+msgstr "新しいパスワード"
+
+#: includes/public/login-page.php:77
+msgid "Incorrect User Name or Password."
+msgstr "ユーザー名またはパスワードが間違っています。"
+
+#: includes/public/views/html-login-page.php:51
+msgid "Log In"
+msgstr "ログイン"
+
+#. Plugin Name of the plugin/theme
+msgid "Wp Similar Basic Auth"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "https://wordpress.org/support/plugin/wp-similar-basic-auth"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Protect similar Basic Authentication for WordPress admin page."
+msgstr ""
+"WordPress管理画面にログインする前にBasic認証風のパスワード制限をかけることが"
+"できます。"
+
+#. Author of the plugin/theme
+msgid "256hax"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://twitter.com/256hax"
+msgstr ""
