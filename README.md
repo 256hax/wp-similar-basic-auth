@@ -15,6 +15,6 @@ Read more - [readme.txt](https://github.com/256hax/wp-similar-basic-auth/blob/ma
 - Test Framework: [PHPUnit](https://phpunit.de/)
 
 ### Development
-- CI Tool: [Travis CI](https://travis-ci.org/256hax/ujull-gnote)
+- CI Tool: [Travis CI](https://travis-ci.org/256hax/wp-similar-basic-auth)
 - Repository: [GitHub](https://github.com/256hax/wp-similar-basic-auth)
 - [VCCW](http://vccw.cc/)
