@@ -82,7 +82,12 @@ $ makepot . languages/wp-similar-basic-auth.pot
 ```
 
 ### Maintenance
-1. Run Poedit.
-2. Open PO file.
+1. Run Poedit Application.
+2. Open PO file in WordPress languages directory.
 3. Click "Update from POT File..." in Catalog menu if PO file is old.
 4. Translate and save PO file.
+
+
+## Other
+### readme.txt Generator
+https://generatewp.com/plugin-readme/?clone=test-plugin-readme-txt-file
