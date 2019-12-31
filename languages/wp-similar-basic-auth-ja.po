@@ -5,8 +5,8 @@ msgstr ""
 "Project-Id-Version: Wp Similar Basic Auth 0.1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wp-similar-basic-"
 "auth\n"
-"POT-Creation-Date: 2019-12-01 15:45:30+00:00\n"
-"PO-Revision-Date: 2019-12-02 00:47+0900\n"
+"POT-Creation-Date: 2019-12-31 03:22:09+00:00\n"
+"PO-Revision-Date: 2019-12-31 12:25+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -25,17 +25,17 @@ msgid "Login Message"
 msgstr "ログインメッセージ"
 
 #: includes/admin/views/html-admin-options-page.php:23
-#: includes/public/views/html-login-page.php:42
+#: includes/public/views/html-login-page.php:43
 msgid "User Name"
 msgstr "ユーザー名"
 
 #: includes/admin/views/html-admin-options-page.php:24
 #: includes/admin/views/html-admin-options-page.php:37
-msgid "(alphanumerics, numbers, symbols. Can't be blank)"
-msgstr "(英数字、記号のみ。空白にすることはできません)"
+msgid "(alphanumerics, numbers, symbols(except < > & \" '). Can't be blank)"
+msgstr "(英数字、記号のみ(< > & “ ‘ は除く)。空白にすることはできません)"
 
 #: includes/admin/views/html-admin-options-page.php:27
-#: includes/public/views/html-login-page.php:46
+#: includes/public/views/html-login-page.php:47
 msgid "Password"
 msgstr "パスワード"
 
@@ -47,16 +47,16 @@ msgstr "変更しない （現在のパスワードを利用）"
 msgid "New Password"
 msgstr "新しいパスワード"
 
-#: includes/public/login-page.php:77
+#: includes/public/login-page.php:88
 msgid "Incorrect User Name or Password."
 msgstr "ユーザー名またはパスワードが間違っています。"
 
-#: includes/public/views/html-login-page.php:51
+#: includes/public/views/html-login-page.php:52
 msgid "Log In"
 msgstr "ログイン"
 
 #. Plugin Name of the plugin/theme
-msgid "Wp Similar Basic Auth"
+msgid "WP Similar Basic Auth"
 msgstr ""
 
 #. Plugin URI of the plugin/theme
@@ -64,10 +64,8 @@ msgid "https://wordpress.org/support/plugin/wp-similar-basic-auth"
 msgstr ""
 
 #. Description of the plugin/theme
-msgid "Protect similar Basic Authentication for WordPress admin page."
+msgid "Protect WordPress admin page on similar Basic Auth without .htaccess."
 msgstr ""
-"WordPress管理画面にログインする前にBasic認証風のパスワード制限をかけることが"
-"できます。"
 
 #. Author of the plugin/theme
 msgid "256hax"
@@ -76,3 +74,8 @@ msgstr ""
 #. Author URI of the plugin/theme
 msgid "https://twitter.com/256hax"
 msgstr ""
+
+#~ msgid "Protect similar Basic Authentication for WordPress admin page."
+#~ msgstr ""
+#~ "WordPress管理画面にログインする前にBasic認証風のパスワード制限をかけるこ"
+#~ "とができます。"

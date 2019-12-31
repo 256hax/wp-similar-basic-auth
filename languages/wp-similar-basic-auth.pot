@@ -1,11 +1,11 @@
-# Copyright (C) 2019 Wp Similar Basic Auth
-# This file is distributed under the same license as the Wp Similar Basic Auth package.
+# Copyright (C) 2019 WP Similar Basic Auth
+# This file is distributed under the same license as the WP Similar Basic Auth package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Wp Similar Basic Auth 0.1.0\n"
+"Project-Id-Version: WP Similar Basic Auth 0.1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wp-similar-basic-"
 "auth\n"
-"POT-Creation-Date: 2019-12-01 15:45:30+00:00\n"
+"POT-Creation-Date: 2019-12-31 03:22:09+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -22,17 +22,17 @@ msgid "Login Message"
 msgstr ""
 
 #: includes/admin/views/html-admin-options-page.php:23
-#: includes/public/views/html-login-page.php:42
+#: includes/public/views/html-login-page.php:43
 msgid "User Name"
 msgstr ""
 
 #: includes/admin/views/html-admin-options-page.php:24
 #: includes/admin/views/html-admin-options-page.php:37
-msgid "(alphanumerics, numbers, symbols. Can't be blank)"
+msgid "(alphanumerics, numbers, symbols(except < > & \" '). Can't be blank)"
 msgstr ""
 
 #: includes/admin/views/html-admin-options-page.php:27
-#: includes/public/views/html-login-page.php:46
+#: includes/public/views/html-login-page.php:47
 msgid "Password"
 msgstr ""
 
@@ -44,16 +44,16 @@ msgstr ""
 msgid "New Password"
 msgstr ""
 
-#: includes/public/login-page.php:77
+#: includes/public/login-page.php:88
 msgid "Incorrect User Name or Password."
 msgstr ""
 
-#: includes/public/views/html-login-page.php:51
+#: includes/public/views/html-login-page.php:52
 msgid "Log In"
 msgstr ""
 
 #. Plugin Name of the plugin/theme
-msgid "Wp Similar Basic Auth"
+msgid "WP Similar Basic Auth"
 msgstr ""
 
 #. Plugin URI of the plugin/theme
@@ -61,7 +61,7 @@ msgid "https://wordpress.org/support/plugin/wp-similar-basic-auth"
 msgstr ""
 
 #. Description of the plugin/theme
-msgid "Protect similar Basic Authentication for WordPress admin page."
+msgid "Protect WordPress admin page on similar Basic Auth without .htaccess."
 msgstr ""
 
 #. Author of the plugin/theme
