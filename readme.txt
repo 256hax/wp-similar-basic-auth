@@ -1,6 +1,7 @@
 === WP Similar Basic Auth ===
 Contributors: 256hax
 Tags: password, login, security, auth, basic auth, .htaccess, kusanagi
+Donate link: none
 Requires at least: 5.0
 Tested up to: 5.3.2
 Requires PHP: 5.6
@@ -12,16 +13,20 @@ Protect WordPress admin page on similar Basic Auth without .htaccess.
 
 == Description ==
 
-Attackers trying to breakthrough WordPress admin page. Basic Auth (or Two-Factor Auth) helps to prevent attacks.
-But some case, it can't modify .htaccess or ssl.conf.
+Attackers trying to breakthrough WordPress admin page. Basic Authentication helps to prevent attacks.
+But some case it can't modify .htaccess or ssl.conf.
 
 This plugin is useful for servers where prohibition modify Apache conf(.htaccess) or Nginx conf(ssl.conf).
-Protect WordPress admin page on similar Basic Auth. It doesn't need .htaccess.
+Protect WordPress admin page on similar Basic Auth. It doesn't need .htaccess or ssl.conf.
 
 = Features =
 
-* Login with User Name and Password.
-* Customization Login page title and message.
+* Auth log in with User Name and Password.
+* Customization title and message in Login page.
+
+= Note =
+
+This plugin doesn't replace Basic Authentication. If you can modify .htaccess or ssl.conf, I recommend using that. See differences running layer.
 
 = Running Layer =
 
@@ -34,10 +39,6 @@ Protect WordPress admin page on similar Basic Auth. It doesn't need .htaccess.
 | Middleware Web (ex: Apache, Nginx) **<- Basic Authentication**
 | Middleware DB
 | OS
-
-= Note =
-
-This plugin doesn't replace Basic Authentication. If you can modify .htaccess or ssl.conf, I recommend using that.
 
 == Installation ==
 
@@ -89,3 +90,6 @@ But you can customize style by CSS. Use 'div id="wsba"'.
 
 = 1.0 =
 * First release.
+
+== Upgrade Notice ==
+* none
