@@ -1,8 +1,8 @@
 <?php
 /**
- * Plugin Name:     Wp Similar Basic Auth
+ * Plugin Name:     WP Similar Basic Auth
  * Plugin URI:      https://wordpress.org/support/plugin/wp-similar-basic-auth
- * Description:     Protect similar Basic Authentication for WordPress admin page.
+ * Description:     Protect WordPress admin page on similar Basic Auth without .htaccess.
  * Author:          256hax
  * Author URI:      https://twitter.com/256hax
  * Text Domain:     wp-similar-basic-auth
