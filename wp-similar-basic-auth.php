@@ -28,7 +28,8 @@ class Hax_Wsba {
 		$this->admin_hooks();
 		$this->public_hooks();
 
-		include_once $hax_wsba_config->path_includes . 'class-hash.php';
+		include_once( $hax_wsba_config->path_includes . 'class-hash.php' );
+		include_once( $hax_wsba_config->path_includes . 'class-input.php' );
 	}
 
 	/**
@@ -53,7 +54,7 @@ class Hax_Wsba {
 		global $hax_wsba_config;
 
 		if ( is_admin() ) {
-			include_once $hax_wsba_config->path_admin . 'admin-options-page.php';
+			include_once( $hax_wsba_config->path_admin . 'admin-options-page.php' );
 		}
 	}
 
@@ -63,8 +64,8 @@ class Hax_Wsba {
 	function public_hooks() {
 		global $hax_wsba_config;
 
-		include_once $hax_wsba_config->path_includes . 'class-cookie.php';
-		include_once $hax_wsba_config->path_public . 'login-page.php';
+		include_once( $hax_wsba_config->path_includes . 'class-cookie.php' );
+		include_once( $hax_wsba_config->path_public . 'login-page.php' );
 	}
 
 } // End class
@@ -72,7 +73,7 @@ class Hax_Wsba {
 
 function run_hax_wsba() {
 	/*--- Load Config ---*/
-	include_once plugin_dir_path( __FILE__ ) . 'wsba-config.php';
+	include_once( plugin_dir_path( __FILE__ ) . 'wsba-config.php' );
 	global $hax_wsba_config;
 	$hax_wsba_config = new Hax_Wsba_Config();
 

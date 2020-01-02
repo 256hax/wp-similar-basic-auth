@@ -124,7 +124,8 @@ class Hax_Wsba_Cookie {
 	 * @return string[]|false Authentication cookie components.
 	 */
 	function parse_auth_cookie( $cookie = '', $scheme = '' ) {
-		  global $hax_wsba_config;
+		global $hax_wsba_config;
+		global $hax_wsba_input;
 
 		if ( empty( $cookie ) ) {
 			switch ( $scheme ) {
@@ -144,11 +145,13 @@ class Hax_Wsba_Cookie {
 					}
 			}
 
-			if ( empty( $_COOKIE[ $cookie_name ] ) ) {
+			$cookie = $hax_wsba_input->sanitize( $_COOKIE );
+
+			if ( empty( $cookie[ $cookie_name ] ) ) {
 				return false;
 			}
 
-			$cookie = $_COOKIE[ $cookie_name ];
+			$cookie = $cookie[ $cookie_name ];
 		}
 
 		$cookie_elements = explode( '|', $cookie );

@@ -60,6 +60,7 @@ class Hax_Wsba_Admin_Options_Page {
 		register_setting( 'hax-wsba-settings-group', $hax_wsba_config->register_settings_title );
 		register_setting( 'hax-wsba-settings-group', $hax_wsba_config->register_settings_message );
 		register_setting( 'hax-wsba-settings-group', $hax_wsba_config->register_settings_user_name );
+		// Get call back from settings_password function.
 		register_setting( 'hax-wsba-settings-group', $hax_wsba_config->register_settings_password_text, array( $this, 'settings_password' ) );
 	}
 
@@ -73,10 +74,13 @@ class Hax_Wsba_Admin_Options_Page {
 	}
 
 	// [Call from View]
-	// Handling new/current passowrd when submit form
+	// Handling new/current passowrd from submit form in WordPress admin page
 	function settings_password( $new_password ) {
+		global $hax_wsba_input;
+		$input = $hax_wsba_input->sanitize( $_POST );
+
 		$current_password       = get_option( 'hax_wsba_password_text' );
-		$select_password_action = isset( $_POST['select_password_action'] ) ? $_POST['select_password_action'] : null;
+		$select_password_action = isset( $input['select_password_action'] ) ? $input['select_password_action'] : null;
 
 		if ( $select_password_action === 'checked-new-password' ) {
 			return password_hash( $new_password, PASSWORD_BCRYPT ); // Hashed (Blowfish) password

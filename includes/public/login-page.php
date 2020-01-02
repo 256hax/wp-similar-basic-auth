@@ -27,13 +27,13 @@ class Hax_Wsba_Login_Page {
 	/**
 	 * Validate submit from View
 	 * args:   $_POST
-	 * return: true => validate ok, false => validate failure
+	 * return: true => validate pass, false => validate failure
 	 */
 	function validate_input( $input ) {
 		// Check post user_name and password
 		if ( isset( $_POST['user_name'], $_POST['password'] ) ) {
-			$input_user_name = esc_attr( $input['user_name'] );
-			$input_password  = esc_attr( $input['password'] );
+			$input_user_name = sanitize_text_field( $input['user_name'] );
+			$input_password  = sanitize_text_field( $input['password'] );
 
 			$saved_user_name = get_option( 'hax_wsba_user_name' );
 			$saved_password  = get_option( 'hax_wsba_password_text' );
@@ -50,7 +50,10 @@ class Hax_Wsba_Login_Page {
 	// Sign In HTML
 	function html() {
 		global $hax_wsba_config;
-		$html = $hax_wsba_config->path_public_views . 'html-login-page.php';
+		global $hax_wsba_input;
+
+		$html  = $hax_wsba_config->path_public_views . 'html-login-page.php';
+		$input = $hax_wsba_input->sanitize( $_POST );
 
 		$saved_user_name = get_option( $hax_wsba_config->register_settings_user_name );
 		$saved_password  = get_option( $hax_wsba_config->register_settings_password_text );
@@ -69,9 +72,9 @@ class Hax_Wsba_Login_Page {
 		}
 
 		// [Pass] If valid nonce.
-		if ( isset( $_POST['_wpnonce'] ) && wp_verify_nonce( $_POST['_wpnonce'], $hax_wsba_config->nonce_login_page ) ) {
+		if ( isset( $input['_wpnonce'] ) && wp_verify_nonce( $input['_wpnonce'], $hax_wsba_config->nonce_login_page ) ) {
 			// [Pass] If user submit valid username/pw first time, set cookie to browser then redirect WP login page.
-			if ( $this->validate_input( $_POST ) ) {
+			if ( $this->validate_input( $input ) ) {
 				$hax_wsba_cookie->set_auth_cookie();
 
 				// Test need return here before exit.
@@ -84,7 +87,7 @@ class Hax_Wsba_Login_Page {
 			}
 
 			// If incorrect User Name or Password, get error message.
-			if ( isset( $_POST['user_name'] ) || isset( $_POST['password'] ) ) {
+			if ( isset( $input['user_name'] ) || isset( $input['password'] ) ) {
 				$this->errors->add( 'incorrect_user_or_pw', esc_html__( 'Incorrect User Name or Password.', 'wp-similar-basic-auth' ) );
 			}
 		}
