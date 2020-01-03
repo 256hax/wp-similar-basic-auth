@@ -30,17 +30,18 @@ class Hax_Wsba_Login_Page {
 	 * return: true => validate pass, false => validate failure
 	 */
 	function validate_input( $input ) {
-		// Check post user_name and password
-		if ( isset( $_POST['user_name'], $_POST['password'] ) ) {
-			$input_user_name = sanitize_text_field( $input['user_name'] );
-			$input_password  = sanitize_text_field( $input['password'] );
+		global $hax_wsba_input;
 
+		$input = $hax_wsba_input->sanitize( $_POST );
+
+		// Check post user_name and password
+		if ( isset( $input['user_name'], $input['password'] ) ) {
 			$saved_user_name = get_option( 'hax_wsba_user_name' );
 			$saved_password  = get_option( 'hax_wsba_password_text' );
 
 			// Pass validate if match user_name and password
 			// Use password_verify (Blowfish bcrypt) instead of "hash_equals" or "===" to compare hashed password.
-			if ( $input_user_name === $saved_user_name && password_verify( $input_password, $saved_password ) ) {
+			if ( $input['user_name'] === $saved_user_name && password_verify( $input['password'], $saved_password ) ) {
 				return true;
 			}
 		}
