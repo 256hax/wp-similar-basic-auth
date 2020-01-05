@@ -38,13 +38,13 @@ class Hax_Wsba_Login_Page {
 		$hax_wsba_input->validate( $input );
 
 		// Check post user_name and password
-		if ( isset( $input['user_name'], $input['password'] ) ) {
+		if ( isset( $input[$hax_wsba_config->register_settings_user_name], $input[$hax_wsba_config->register_settings_password] ) ) {
 			$saved_user_name = get_option( $hax_wsba_config->register_settings_user_name );
 			$saved_password  = get_option( $hax_wsba_config->register_settings_password );
 
 			// Pass validate if match user_name and password
 			// Use password_verify (Blowfish bcrypt) instead of "hash_equals" or "===" to compare hashed password.
-			if ( $input['user_name'] === $saved_user_name && password_verify( $input['password'], $saved_password ) ) {
+			if ( $input[$hax_wsba_config->register_settings_user_name] === $saved_user_name && password_verify( $input[$hax_wsba_config->register_settings_password], $saved_password ) ) {
 				return true;
 			}
 		}
@@ -72,9 +72,17 @@ class Hax_Wsba_Login_Page {
 			return 'data_does_not_exist'; // For phpunit
 		}
 
-		// [Fail] Deny login if validate failed.
+		// [Fail] If failed input validation.
 		if ( $validated !== 'pass') {
-			return 'validate_failed';
+			$this->errors->add( 'incorrect_user_or_pw', esc_html__( 'Incorrect User Name or Password.', 'wp-similar-basic-auth' ) );
+
+			// Test need return here before exit.
+			if ( $hax_wsba_config->wp_env === 'test' ) {
+				return 'validation_failed';
+			}
+
+			load_template( $html );
+			exit; // Need exit.
 		}
 
 		// [Pass] If user has valid cookie, pass WSBA page.
@@ -98,7 +106,7 @@ class Hax_Wsba_Login_Page {
 			}
 
 			// If incorrect User Name or Password, get error message.
-			if ( isset( $input['user_name'] ) || isset( $input['password'] ) ) {
+			if ( isset( $input[$hax_wsba_config->register_settings_user_name] ) || isset( $input[$hax_wsba_config->register_settings_password] ) ) {
 				$this->errors->add( 'incorrect_user_or_pw', esc_html__( 'Incorrect User Name or Password.', 'wp-similar-basic-auth' ) );
 			}
 		}

@@ -153,9 +153,8 @@ class Hax_Wsba_Admin_Options_Page {
 			if ( $validation_new_password_result === 'pass' ) {
 				return password_hash( $sanitized_new_password, PASSWORD_BCRYPT ); // Hashed (Blowfish) password
 			}
-		} else {
-			return $current_password;
 		}
+		return $current_password;
 	}
 
 } // End class

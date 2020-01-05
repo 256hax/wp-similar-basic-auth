@@ -34,16 +34,15 @@ class AdminOptionsPageTest extends WP_UnitTestCase {
 	}
 
 	/**
-	 * describe(object/method)  : Hax_Wsba_Login_Page->settings_password()
-	   *    context(conditions)    : "check new password"
-	   *     it(expect/behavior)  : "update hashed password to wp_options"
-		 *    do(expect/behavior): password_verify( input_new_password, return )
+	 * describe(object/method) : Hax_Wsba_Login_Page->settings_password()
+	 *  context(conditions)    : "select new password at CheckBox"
+	 *   it(expect/behavior)   : "update hashed password to wp_options"
+	 *    do(expect/behavior)  : password_verify( input_new_password, result )
 	 */
 	public function test_checked_new_password() {
 		global $hax_wsba_config;
 		global $hax_wsba_admin_options_page;
 
-		/*--- Return hashed password ---*/
 		$_POST['select_password_action'] = 'checked-new-password'; // Checked "New password" in View.
     $_POST[$hax_wsba_config->register_settings_password] = 'input new password';
     $input_new_password              = $_POST[$hax_wsba_config->register_settings_password];
@@ -54,21 +53,44 @@ class AdminOptionsPageTest extends WP_UnitTestCase {
 
 	/**
 	 * describe(object/method) : Hax_Wsba_Login_Page->settings_password()
-		  *  context(conditions)    : "check use current password"
-		 *   it(expect/behavior)  : "no update password"
-		 *    do(expect/behavior): password_verify( input_new_password, return )
+   *  context(conditions)    : "select use current password at CheckBox"
+   *   it(expect/behavior)   : "update current password to wp_options"
+	 *    do(expect/behavior)  : password_verify( current_password, result )
+   *
+   * note: register_setting can't no update. Update current data(in wp_options) to wp_options if invalid.
 	 */
 	public function test_use_current_password() {
 		global $hax_wsba_config;
 		global $hax_wsba_admin_options_page;
 
-		/*--- Return hashed password ---*/
 		$_POST['select_password_action'] = ''; // Checked "current password".
-		$input_new_password              = 'ignore this password'; // Ignore new password
+    $_POST[$hax_wsba_config->register_settings_password] = 'ignore this password'; // Ignore new password
+    $input_new_password              = $_POST[$hax_wsba_config->register_settings_password];
 		$current_password                = 'current password';
 
 		$result = $hax_wsba_admin_options_page->settings_password( $input_new_password );
 		$this->assertTrue( password_verify( $current_password, $result ) );
+	}
+
+  /**
+	 * describe(object/method) : Hax_Wsba_Login_Page->settings_password()
+	 *  context(conditions)    : "select new password at CheckBox with invalid new password"
+	 *   it(expect/behavior)   : "update current password to wp_options"
+	 *    do(expect/behavior)  : password_verify( current_password, result )
+   *
+   * note: register_setting can't no update. Update current data(in wp_options) to wp_options if invalid.
+	 */
+	public function test_password_validation_failed() {
+		global $hax_wsba_config;
+		global $hax_wsba_admin_options_page;
+
+    $_POST['select_password_action'] = 'checked-new-password'; // Checked "New password" in View.
+    $_POST[$hax_wsba_config->register_settings_password] = '$warugaki%'; // Invalid string
+    $input_new_password              = $_POST[$hax_wsba_config->register_settings_password];
+    $current_password                = 'current password';
+
+    $result = $hax_wsba_admin_options_page->settings_password( $input_new_password );
+    $this->assertTrue( password_verify( $current_password, $result ) );
 	}
 
 }

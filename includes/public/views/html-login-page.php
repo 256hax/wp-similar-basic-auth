@@ -41,12 +41,12 @@ $message = esc_attr( get_option( $hax_wsba_config->register_settings_message ) )
 			<form action="wp-login.php" method="post">
 				<ul>
 					<li>
-						<label for="user_name"><?php esc_html_e( 'User Name', 'wp-similar-basic-auth' ); ?></label>
-						<input type="text" name="user_name" maxlength="<?php echo $hax_wsba_input->validate_user_name_maxlength; ?>">
+						<label for="<?php echo $hax_wsba_config->register_settings_user_name; ?>"><?php esc_html_e( 'User Name', 'wp-similar-basic-auth' ); ?></label>
+						<input type="text" name="<?php echo $hax_wsba_config->register_settings_user_name; ?>" maxlength="<?php echo $hax_wsba_input->validate_user_name_maxlength; ?>">
 					</li>
 					<li>
-						<label for="password"><?php esc_html_e( 'Password', 'wp-similar-basic-auth' ); ?></label>
-						<input type="password" name="password" maxlength="<?php echo $hax_wsba_input->validate_password_maxlength; ?>">
+						<label for="<?php echo $hax_wsba_config->register_settings_password; ?>"><?php esc_html_e( 'Password', 'wp-similar-basic-auth' ); ?></label>
+						<input type="password" name="<?php echo $hax_wsba_config->register_settings_password; ?>" maxlength="<?php echo $hax_wsba_input->validate_password_maxlength; ?>">
 					</li>
 				</ul>
 				<div>

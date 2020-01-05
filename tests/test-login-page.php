@@ -35,9 +35,9 @@ class LoginPageTest extends WP_UnitTestCase {
 	}
 
 	/**
-	 * describe(object/method): Hax_Wsba_Login_Page->html()
-	 *  context(conditions)   : "user name and password data does not exist(=false) in WP Options"
-	 *    it(expect/behavior) : "go to WP Admin page"
+	 * describe(object/method) : Hax_Wsba_Login_Page->html()
+	 *  context(conditions)    : "User Name and Password data does not exist(=false) in WP Options"
+	 *    it(expect/behavior)  : "go to WP Admin page"
 	 */
 	public function test_data_does_not_exist() {
 		global $hax_wsba_config;
@@ -51,48 +51,64 @@ class LoginPageTest extends WP_UnitTestCase {
 	}
 
 	/**
-	 * describe(object/method): Hax_Wsba_Login_Page->html()
-	 *  context(conditions)   : "submit valid user name and password"
-	 *    it(expect/behavior) : "set auth cookie and redirect to WP Admin page"
+	 * describe(object/method) : Hax_Wsba_Login_Page->html()
+	 *  context(conditions)    : "submit invalid(not allowed string) User Name and Password"
+	 *   it(expect/behavior)   : "go to WP Admin page"
+	 */
+	public function test_validation_failed() {
+		global $hax_wsba_config;
+		global $hax_wsba_login_page;
+
+		$_POST[$hax_wsba_config->register_settings_user_name] = '$warugaki%';
+		$_POST[$hax_wsba_config->register_settings_password]  = '(;-;)/~';
+
+		$result = $hax_wsba_login_page->html();
+		$this->assertEquals( $result, 'validation_failed' );
+	}
+
+	/**
+	 * describe(object/method) : Hax_Wsba_Login_Page->html()
+	 *  context(conditions)    : "submit valid User Name and Password"
+	 *   it(expect/behavior)   : "set auth cookie and redirect to WP Admin page"
 	 */
 	public function test_set_auth_cookie() {
 		global $hax_wsba_config;
 		global $hax_wsba_login_page;
 
-		$_POST['user_name'] = 'reiwa-tarou';
-		$_POST['password']  = 'current password';
+		$_POST[$hax_wsba_config->register_settings_user_name] = 'reiwa-tarou';
+		$_POST[$hax_wsba_config->register_settings_password]  = 'current password';
 
 		$result = $hax_wsba_login_page->html();
 		$this->assertEquals( $result, 'set_auth_cookie' );
 	}
 
 	/**
-	 * describe(object/method): Hax_Wsba_Login_Page->html()
-	 *  context(conditions)   : "submit invalid user name and password"
-	 *    it(expect/behavior) : "load WSBA login page"
+	 * describe(object/method) : Hax_Wsba_Login_Page->html()
+	 *  context(conditions)    : "submit invalid User Name and Password"
+	 *   it(expect/behavior)   : "load WSBA login page"
 	 */
 	public function test_load_template_html() {
 		global $hax_wsba_config;
 		global $hax_wsba_login_page;
 
-		$_POST['user_name'] = 'heisei-yarou';
-		$_POST['password']  = 'invalid password';
+		$_POST[$hax_wsba_config->register_settings_user_name] = 'heisei-yarou';
+		$_POST[$hax_wsba_config->register_settings_password]  = 'invalid password';
 
 		$result = $hax_wsba_login_page->html();
 		$this->assertEquals( $result, 'load_template_html' );
 	}
 
 	/**
-	 * describe(object/method): Hax_Wsba_Login_Page->html()
-	 *  context(conditions)   : "submit invalid nonce"
-	 *    it(expect/behavior) : "load WSBA login page"
+	 * describe(object/method) : Hax_Wsba_Login_Page->html()
+	 *  context(conditions)    : "submit invalid nonce"
+	 *   it(expect/behavior)   : "load WSBA login page"
 	 */
 	public function test_invalid_nonce() {
 		global $hax_wsba_config;
 		global $hax_wsba_login_page;
 
-		$_POST['user_name'] = 'reiwa-tarou';
-		$_POST['password']  = 'current password';
+		$_POST[$hax_wsba_config->register_settings_user_name] = 'reiwa-tarou';
+		$_POST[$hax_wsba_config->register_settings_password]  = 'current password';
 		$_POST['_wpnonce']  = wp_create_nonce( 'invalid-action' );
 
 		$result = $hax_wsba_login_page->html();
