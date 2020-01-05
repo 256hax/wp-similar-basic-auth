@@ -32,7 +32,7 @@ class Hax_Wsba_Config {
 		$this->register_settings_title         = 'hax_wsba_title';
 		$this->register_settings_message       = 'hax_wsba_message';
 		$this->register_settings_user_name     = 'hax_wsba_user_name';
-		$this->register_settings_password_text = 'hax_wsba_password_text';
+		$this->register_settings_password = 'hax_wsba_password';
 
 		/*--- Cookie ---*/
 		$this->cookie_auth        = $this->naming_plugin_prefix;

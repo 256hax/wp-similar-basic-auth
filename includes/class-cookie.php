@@ -42,7 +42,7 @@ class Hax_Wsba_Cookie {
 
 	  global $blog_id;
 	  $algo = $hax_wsba_hash->which_sha();
-	  $data = $blog_id . '|' . $expiration . '|' . get_option( 'hax_wsba_password_text' );
+	  $data = $blog_id . '|' . $expiration . '|' . get_option( 'hax_wsba_password' );
 	  $key  = wp_salt();
 	  $hash = hash_hmac( $algo, $data, $key );
 
@@ -210,7 +210,7 @@ class Hax_Wsba_Cookie {
 
 		  global $blog_id;
 		  $algo = $hax_wsba_hash->which_sha();
-		  $data = $blog_id . '|' . $expiration . '|' . get_option( 'hax_wsba_password_text' );
+		  $data = $blog_id . '|' . $expiration . '|' . get_option( 'hax_wsba_password' );
 		  $key  = wp_salt();
 		  $hash = hash_hmac( $algo, $data, $key );
 

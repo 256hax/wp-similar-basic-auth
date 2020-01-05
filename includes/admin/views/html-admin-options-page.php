@@ -38,7 +38,7 @@ $user_name = esc_attr( get_option( $hax_wsba_config->register_settings_user_name
     		  </p>
     			<input type="radio" id="new-password" name="select_password_action" value="checked-new-password">
     			  <label for="new-password"><?php esc_html_e( 'New Password', 'wp-similar-basic-auth' ); ?>: </label>
-    			<input type="text" autocomplete="off" id="new-password-text" name="<?php echo $hax_wsba_config->register_settings_password_text; ?>" oninput="autoRadioButtonChecked(this.value ,'current-password', 'new-password');" size="30" maxlength="<?php echo $hax_wsba_input->validate_password_text_maxlength; ?>">
+    			<input type="text" autocomplete="off" id="new-password-text" name="<?php echo $hax_wsba_config->register_settings_password; ?>" oninput="autoRadioButtonChecked(this.value ,'current-password', 'new-password');" size="30" maxlength="<?php echo $hax_wsba_input->validate_password_maxlength; ?>">
     				<?php esc_html_e( "Can't be blank", 'wp-similar-basic-auth' ); ?>
     		</td>
   	  </tr>

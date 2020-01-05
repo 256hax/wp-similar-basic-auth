@@ -75,7 +75,7 @@ class Hax_Wsba_Admin_Options_Page {
 		// Get call back from settings_password function.
 		register_setting(
 			'hax-wsba-settings-group',
-			$hax_wsba_config->register_settings_password_text,
+			$hax_wsba_config->register_settings_password,
 			array( $this, 'settings_password' )
 		);
 	}
@@ -123,7 +123,7 @@ class Hax_Wsba_Admin_Options_Page {
 		global $hax_wsba_config;
 		global $hax_wsba_input;
 
-		$option_name = $hax_wsba_config->register_settings_password_text; // Set option name(=HTML name element)
+		$option_name = $hax_wsba_config->register_settings_password; // Set option name(=HTML name element)
 
 		return $hax_wsba_input->validate_settings( $option_name );
 	}
@@ -135,10 +135,10 @@ class Hax_Wsba_Admin_Options_Page {
 		global $hax_wsba_input;
 		$input = $hax_wsba_input->sanitize( $_POST );
 
-		$current_password = get_option( 'hax_wsba_password_text' );
+		$current_password = get_option( 'hax_wsba_password' );
 
 		// Validation result
-		$option_name = $hax_wsba_config->register_settings_password_text;
+		$option_name = $hax_wsba_config->register_settings_password;
 		$validation_new_password[$option_name] = $new_password;
 		$validation_new_password_result = $hax_wsba_input->sanitize($validation_new_password);
 		$validation_new_password_result = $hax_wsba_input->validate($validation_new_password_result);

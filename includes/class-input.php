@@ -11,7 +11,7 @@ class Hax_Wsba_Input {
 	public $validate_title_maxlength = 80;
 	public $validate_message_maxlength = 80;
 	public $validate_user_name_maxlength = 20;
-	public $validate_password_text_maxlength = 20;
+	public $validate_password_maxlength = 20;
 
 
 	function __construct() {
@@ -81,7 +81,7 @@ class Hax_Wsba_Input {
 	    $hax_wsba_config->register_settings_title => esc_html__( 'Login Title', 'wp-similar-basic-auth' ),
 			$hax_wsba_config->register_settings_message => esc_html__( 'Login Message', 'wp-similar-basic-auth' ),
 			$hax_wsba_config->register_settings_user_name => esc_html__( 'User Name', 'wp-similar-basic-auth' ),
-			$hax_wsba_config->register_settings_password_text => esc_html__( 'Password', 'wp-similar-basic-auth' )
+			$hax_wsba_config->register_settings_password => esc_html__( 'Password', 'wp-similar-basic-auth' )
 		);
 
 		// Input rules
@@ -99,8 +99,8 @@ class Hax_Wsba_Input {
 				['lengthMax', $this->validate_user_name_maxlength],
 				['regex', $regex_login]
 			],
-			$hax_wsba_config->register_settings_password_text => [
-				['lengthMax', $this->validate_password_text_maxlength],
+			$hax_wsba_config->register_settings_password => [
+				['lengthMax', $this->validate_password_maxlength],
 				['regex', $regex_login]
 			]
 		];

@@ -46,7 +46,7 @@ $message = esc_attr( get_option( $hax_wsba_config->register_settings_message ) )
 					</li>
 					<li>
 						<label for="password"><?php esc_html_e( 'Password', 'wp-similar-basic-auth' ); ?></label>
-						<input type="password" name="password" maxlength="<?php echo $hax_wsba_input->validate_password_text_maxlength; ?>">
+						<input type="password" name="password" maxlength="<?php echo $hax_wsba_input->validate_password_maxlength; ?>">
 					</li>
 				</ul>
 				<div>

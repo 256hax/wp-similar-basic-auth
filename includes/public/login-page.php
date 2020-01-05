@@ -39,7 +39,7 @@ class Hax_Wsba_Login_Page {
 		// Check post user_name and password
 		if ( isset( $input['user_name'], $input['password'] ) ) {
 			$saved_user_name = get_option( 'hax_wsba_user_name' );
-			$saved_password  = get_option( 'hax_wsba_password_text' );
+			$saved_password  = get_option( 'hax_wsba_password' );
 
 			// Pass validate if match user_name and password
 			// Use password_verify (Blowfish bcrypt) instead of "hash_equals" or "===" to compare hashed password.
@@ -61,7 +61,7 @@ class Hax_Wsba_Login_Page {
 		$validated = $hax_wsba_input->validate( $input );
 
 		$saved_user_name = get_option( $hax_wsba_config->register_settings_user_name );
-		$saved_password  = get_option( $hax_wsba_config->register_settings_password_text );
+		$saved_password  = get_option( $hax_wsba_config->register_settings_password );
 
 		$hax_wsba_cookie = new Hax_Wsba_Cookie();
 

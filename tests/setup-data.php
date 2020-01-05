@@ -15,5 +15,5 @@ function setup_data() {
 
 	/*--- Add hashed password ---*/
 	$current_password = password_hash( 'current password', PASSWORD_BCRYPT );
-	add_option( $hax_wsba_config->register_settings_password_text, $current_password );
+	add_option( $hax_wsba_config->register_settings_password, $current_password );
 }

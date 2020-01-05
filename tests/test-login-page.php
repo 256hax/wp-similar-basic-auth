@@ -44,7 +44,7 @@ class LoginPageTest extends WP_UnitTestCase {
 		global $hax_wsba_login_page;
 
 		delete_option( $hax_wsba_config->register_settings_user_name );
-		delete_option( $hax_wsba_config->register_settings_password_text );
+		delete_option( $hax_wsba_config->register_settings_password );
 
 		$result = $hax_wsba_login_page->html();
 		$this->assertEquals( $result, 'data_does_not_exist' );

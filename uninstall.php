@@ -18,7 +18,7 @@ function run_hax_wsba_uninstall() {
 	delete_option( $hax_wsba_config->register_settings_title );
 	delete_option( $hax_wsba_config->register_settings_message );
 	delete_option( $hax_wsba_config->register_settings_user_name );
-	delete_option( $hax_wsba_config->register_settings_password_text );
+	delete_option( $hax_wsba_config->register_settings_password );
 }
 
 run_hax_wsba_uninstall();

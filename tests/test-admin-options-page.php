@@ -64,10 +64,10 @@ class AdminOptionsPageTest extends WP_UnitTestCase {
 		/*--- Return hashed password ---*/
 		$_POST['select_password_action'] = ''; // Checked "current password".
 		$input_new_password              = 'ignore this password'; // Ignore new password
-		$current_password_text           = esc_attr( 'current password' );
+		$current_password           = esc_attr( 'current password' );
 
 		$result = $hax_wsba_admin_options_page->settings_password( $input_new_password );
-		$this->assertTrue( password_verify( $current_password_text, $result ) );
+		$this->assertTrue( password_verify( $current_password, $result ) );
 	}
 
 }
