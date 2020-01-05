@@ -13,6 +13,7 @@ Read more - [readme.txt](https://github.com/256hax/wp-similar-basic-auth/blob/ma
 ### Application Layer
 - [WordPress](https://wordpress.org/)
 - Test Framework: [PHPUnit](https://phpunit.de/)
+- Validation Library: [Valitron](https://github.com/vlucas/valitron)
 
 ### Development
 - CI Tool: [Travis CI](https://travis-ci.org/256hax/wp-similar-basic-auth)
