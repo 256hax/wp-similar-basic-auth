@@ -17,7 +17,11 @@ ul li {
 }
 
 label {
-    width: 100px;
+  width: 100px;
+}
+
+#login-form {
+  margin-bottom: 200px;
 }
 
 #error {

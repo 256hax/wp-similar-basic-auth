@@ -38,7 +38,7 @@ $message = esc_attr( get_option( $hax_wsba_config->register_settings_message ) )
 			<p><?php echo $message; ?></p>
 
 			<!-- Form -->
-			<form action="wp-login.php" method="post">
+			<form id="login-form" action="wp-login.php" method="post">
 				<ul>
 					<li>
 						<label for="<?php echo $hax_wsba_config->register_settings_user_name; ?>"><?php esc_html_e( 'User Name', 'wp-similar-basic-auth' ); ?></label>
