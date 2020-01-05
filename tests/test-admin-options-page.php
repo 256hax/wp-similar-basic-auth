@@ -45,7 +45,8 @@ class AdminOptionsPageTest extends WP_UnitTestCase {
 
 		/*--- Return hashed password ---*/
 		$_POST['select_password_action'] = 'checked-new-password'; // Checked "New password" in View.
-		$input_new_password              = esc_attr( 'input new password' );
+    $_POST[$hax_wsba_config->register_settings_password] = 'input new password';
+    $input_new_password              = $_POST[$hax_wsba_config->register_settings_password];
 
 		$result = $hax_wsba_admin_options_page->settings_password( $input_new_password );
 		$this->assertTrue( password_verify( $input_new_password, $result ) );
@@ -64,7 +65,7 @@ class AdminOptionsPageTest extends WP_UnitTestCase {
 		/*--- Return hashed password ---*/
 		$_POST['select_password_action'] = ''; // Checked "current password".
 		$input_new_password              = 'ignore this password'; // Ignore new password
-		$current_password           = esc_attr( 'current password' );
+		$current_password                = 'current password';
 
 		$result = $hax_wsba_admin_options_page->settings_password( $input_new_password );
 		$this->assertTrue( password_verify( $current_password, $result ) );

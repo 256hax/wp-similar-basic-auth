@@ -133,24 +133,26 @@ class Hax_Wsba_Admin_Options_Page {
 	function settings_password( $new_password ) {
 		global $hax_wsba_config;
 		global $hax_wsba_input;
+
 		$input = $hax_wsba_input->sanitize( $_POST );
-
-		$current_password = get_option( 'hax_wsba_password' );
-
-		// Validation result
-		$option_name = $hax_wsba_config->register_settings_password;
-		$validation_new_password[$option_name] = $new_password;
-		$validation_new_password_result = $hax_wsba_input->sanitize($validation_new_password);
-		$validation_new_password_result = $hax_wsba_input->validate($validation_new_password_result);
-
-		// Sanitized and validated new password
-		$sanitized_new_password = $this->validate_password();
+		$current_password = get_option( $hax_wsba_config->register_settings_password );
 
 		// Check select box
 		$select_password_action = isset( $input['select_password_action'] ) ? $input['select_password_action'] : null;
 
-		if ( $select_password_action === 'checked-new-password' && $validation_new_password_result === 'pass' ) {
-			return password_hash( $sanitized_new_password, PASSWORD_BCRYPT ); // Hashed (Blowfish) password
+		if ( $select_password_action === 'checked-new-password') {
+			// Validation result
+			$option_name = $hax_wsba_config->register_settings_password;
+			$validation_new_password[$option_name] = $new_password;
+			$validation_new_password_result = $hax_wsba_input->sanitize($validation_new_password);
+			$validation_new_password_result = $hax_wsba_input->validate($validation_new_password_result);
+
+			// Sanitized and validated new password
+			$sanitized_new_password = $this->validate_password();
+
+			if ( $validation_new_password_result === 'pass' ) {
+				return password_hash( $sanitized_new_password, PASSWORD_BCRYPT ); // Hashed (Blowfish) password
+			}
 		} else {
 			return $current_password;
 		}
