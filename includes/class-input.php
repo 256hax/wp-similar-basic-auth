@@ -68,8 +68,8 @@ class Hax_Wsba_Input {
 	/**
 	 * Validate input from submit page
 	 *
-	 * args:   array. $_POST
-	 * return: string('pass') => Pass validation, array => Fail validation with error message.
+	 * args:   $_POST(array)
+	 * return: Pass validation => pass(string), Fail validation => error messages(array)
 	 *
 	 * reference: https://github.com/vlucas/valitron
 	 */

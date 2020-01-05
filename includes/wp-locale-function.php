@@ -1,8 +1,8 @@
 <?php
 /**
  * Get local code
- * args:   String. WordPress locale (get_locale())
- * return: String. Locale code. Return false if doesn't mutch.
+ * args:   WordPress locale (=get_locale()) (string)
+ * return: Locale code. Return false if doesn't mutch. (string)
  */
 function hax_wsba_get_locale_code( $wp_locale = 'en_US' ) {
 	// Original locale list: https://gist.github.com/xnau/f238d0adc9f4632e354d12c9a7f12390

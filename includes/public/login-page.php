@@ -27,8 +27,8 @@ class Hax_Wsba_Login_Page {
 	/**
 	 * Validate submit from View
 	 *
-	 * args:   $_POST
-	 * return: true => validate pass, false => validate failure
+	 * args:   $_POST(array)
+	 * return: validate pass => true, validate failure => false
 	 */
 	function validate_input( $input ) {
 		global $hax_wsba_input;
