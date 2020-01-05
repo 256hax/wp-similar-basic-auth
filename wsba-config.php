@@ -16,11 +16,13 @@ class Hax_Wsba_Config {
 		$this->naming_plugin_text_domain = dirname( plugin_basename( __FILE__ ) ) . '/languages/';
 
 		/*--- File Path ---*/
-		$this->path_includes     = plugin_dir_path( __FILE__ ) . 'includes/';
-		$this->path_admin        = plugin_dir_path( __FILE__ ) . 'includes/admin/';
-		$this->path_admin_views  = plugin_dir_path( __FILE__ ) . 'includes/admin/views/';
-		$this->path_public       = plugin_dir_path( __FILE__ ) . 'includes/public/';
-		$this->path_public_views = plugin_dir_path( __FILE__ ) . 'includes/public/views/';
+		$this->path_includes      = plugin_dir_path( __FILE__ ) . 'includes/';
+		$this->path_admin         = plugin_dir_path( __FILE__ ) . 'includes/admin/';
+		$this->path_admin_views   = plugin_dir_path( __FILE__ ) . 'includes/admin/views/';
+		$this->path_public        = plugin_dir_path( __FILE__ ) . 'includes/public/';
+		$this->path_public_views  = plugin_dir_path( __FILE__ ) . 'includes/public/views/';
+		$this->path_thirdparty    = plugin_dir_path( __FILE__ ) . 'includes/third-party/';
+		$this->path_valitron_lang = plugin_dir_path( __FILE__ ) . 'includes/third-party/valitron/lang/';
 
 		/*--- URL ---*/
 		$this->url_assets_js  = plugins_url( 'assets/js/', __FILE__ );

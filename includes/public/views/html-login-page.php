@@ -1,6 +1,7 @@
 <?php
 global $hax_wsba_config;
 global $hax_wsba_login_page;
+global $hax_wsba_input;
 
 // One error pattern for now.
 $error_message = $hax_wsba_login_page->errors->get_error_message( 'incorrect_user_or_pw' );
@@ -41,11 +42,11 @@ $message = get_option( 'hax_wsba_message' );
 				<ul>
 					<li>
 						<label for="user_name"><?php esc_html_e( 'User Name', 'wp-similar-basic-auth' ); ?></label>
-						<input type="text" name="user_name">
+						<input type="text" name="user_name" maxlength="<?php echo $hax_wsba_input->validate_user_name_maxlength; ?>">
 					</li>
 					<li>
 						<label for="password"><?php esc_html_e( 'Password', 'wp-similar-basic-auth' ); ?></label>
-						<input type="password" name="password">
+						<input type="password" name="password" maxlength="<?php echo $hax_wsba_input->validate_password_text_maxlength; ?>">
 					</li>
 				</ul>
 				<div>

@@ -30,6 +30,7 @@ class Hax_Wsba {
 
 		include_once( $hax_wsba_config->path_includes . 'class-hash.php' );
 		include_once( $hax_wsba_config->path_includes . 'class-input.php' );
+		include_once( $hax_wsba_config->path_thirdparty . 'valitron/src/Valitron/Validator.php' );
 	}
 
 	/**

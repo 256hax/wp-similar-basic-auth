@@ -26,6 +26,7 @@ class Hax_Wsba_Login_Page {
 
 	/**
 	 * Validate submit from View
+	 *
 	 * args:   $_POST
 	 * return: true => validate pass, false => validate failure
 	 */
@@ -33,6 +34,7 @@ class Hax_Wsba_Login_Page {
 		global $hax_wsba_input;
 
 		$input = $hax_wsba_input->sanitize( $_POST );
+		$hax_wsba_input->validate( $input );
 
 		// Check post user_name and password
 		if ( isset( $input['user_name'], $input['password'] ) ) {
