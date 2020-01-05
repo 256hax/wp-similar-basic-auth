@@ -8,12 +8,13 @@
 class Hax_Wsba_Config {
 
 	function __construct() {
-		/*--- Naming ---*/
+		/*--- Env (ex: dev, test, production) ---*/
 		$this->wp_env = '';
 
 		/*--- Naming ---*/
-		$this->naming_plugin_prefix      = 'hax_wsba';
-		$this->naming_plugin_text_domain = dirname( plugin_basename( __FILE__ ) ) . '/languages/';
+		$this->naming_plugin_prefix       = 'hax_wsba';
+		$this->naming_plugin_text_domain  = dirname( plugin_basename( __FILE__ ) ) . '/languages/';
+		$this->naming_plugin_submenu_slug = 'hax-wsba-submenu';
 
 		/*--- File Path ---*/
 		$this->path_includes      = plugin_dir_path( __FILE__ ) . 'includes/';
