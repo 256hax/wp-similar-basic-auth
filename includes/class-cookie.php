@@ -38,17 +38,17 @@ class Hax_Wsba_Cookie {
 	 * @return string Authentication cookie contents.
 	 */
 	function generate_auth_cookie( $expiration, $scheme = 'auth' ) {
-		  $hax_wsba_hash = new Hax_Wsba_Hash();
+	  $hax_wsba_hash = new Hax_Wsba_Hash();
 
-		  global $blog_id;
-		  $algo = $hax_wsba_hash->which_sha();
-		  $data = $blog_id . '|' . $expiration . '|' . get_option( 'hax_wsba_password_text' );
-		  $key  = wp_salt();
-		  $hash = hash_hmac( $algo, $data, $key );
+	  global $blog_id;
+	  $algo = $hax_wsba_hash->which_sha();
+	  $data = $blog_id . '|' . $expiration . '|' . get_option( 'hax_wsba_password_text' );
+	  $key  = wp_salt();
+	  $hash = hash_hmac( $algo, $data, $key );
 
 		$cookie = $blog_id . '|' . $expiration . '|' . $hash;
 
-		  return $cookie;
+	  return $cookie;
 	}
 
 	/**
@@ -107,7 +107,7 @@ class Hax_Wsba_Cookie {
 			return;
 		}
 
-		  setcookie( $cookie_name, $auth_cookie, $expire, COOKIEPATH, COOKIE_DOMAIN, $secure, true );
+		setcookie( $cookie_name, $auth_cookie, $expire, COOKIEPATH, COOKIE_DOMAIN, $secure, true );
 
 		if ( COOKIEPATH != SITECOOKIEPATH ) {
 			setcookie( $cookie_name, $auth_cookie, $expire, SITECOOKIEPATH, COOKIE_DOMAIN, $secure, true );

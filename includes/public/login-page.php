@@ -73,7 +73,7 @@ class Hax_Wsba_Login_Page {
 
 		// [Fail] Deny login if validate failed.
 		if ( $validated !== 'pass') {
-			return 'validate failed';
+			return 'validate_failed';
 		}
 
 		// [Pass] If user has valid cookie, pass WSBA page.

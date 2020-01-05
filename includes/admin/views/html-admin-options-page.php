@@ -1,6 +1,10 @@
 <?php
-  global $hax_wsba_config;
-  global $hax_wsba_input;
+global $hax_wsba_config;
+global $hax_wsba_input;
+
+$title     = esc_attr( get_option( $hax_wsba_config->register_settings_title ) );
+$message   = esc_attr( get_option( $hax_wsba_config->register_settings_message ) );
+$user_name = esc_attr( get_option( $hax_wsba_config->register_settings_user_name ) );
 ?>
 
 
@@ -14,15 +18,15 @@
   	<table class="form-table">
   	  <tr>
     		<th scope="row"><?php esc_html_e( 'Login Title', 'wp-similar-basic-auth' ); ?></th>
-    		<td><input type="text" name="<?php echo $hax_wsba_config->register_settings_title; ?>" value="<?php echo esc_attr( get_option( $hax_wsba_config->register_settings_title ) ); ?>" size="90" maxlength="<?php echo $hax_wsba_input->validate_title_maxlength; ?>" /></td>
+    		<td><input type="text" name="<?php echo $hax_wsba_config->register_settings_title; ?>" value="<?php echo $title; ?>" size="90" maxlength="<?php echo $hax_wsba_input->validate_title_maxlength; ?>" /></td>
   	  </tr>
   	  <tr>
     		<th scope="row"><?php esc_html_e( 'Login Message', 'wp-similar-basic-auth' ); ?></th>
-    		<td><input type="text" name="<?php echo $hax_wsba_config->register_settings_message; ?>" value="<?php echo esc_attr( get_option( $hax_wsba_config->register_settings_message ) ); ?>" size="90" maxlength="<?php echo $hax_wsba_input->validate_message_maxlength; ?>" /></td>
+    		<td><input type="text" name="<?php echo $hax_wsba_config->register_settings_message; ?>" value="<?php echo $message; ?>" size="90" maxlength="<?php echo $hax_wsba_input->validate_message_maxlength; ?>" /></td>
   	  </tr>
   	  <tr>
     		<th scope="row"><?php esc_html_e( 'User Name', 'wp-similar-basic-auth' ); ?></th>
-    		<td><input type="text" name="<?php echo $hax_wsba_config->register_settings_user_name; ?>" value="<?php echo esc_attr( get_option( $hax_wsba_config->register_settings_user_name ) ); ?>" size="30" maxlength="<?php echo $hax_wsba_input->validate_user_name_maxlength; ?>" /> <?php esc_html_e( "Can't be blank", 'wp-similar-basic-auth' ); ?></td>
+    		<td><input type="text" name="<?php echo $hax_wsba_config->register_settings_user_name; ?>" value="<?php echo esc_attr( get_option( $hax_wsba_config->register_settings_user_name ) ); ?>" size="30" maxlength="<?php echo $user_name; ?>" /> <?php esc_html_e( "Can't be blank", 'wp-similar-basic-auth' ); ?></td>
   	  </tr>
   	  <tr>
     		<th scope="row"><?php esc_html_e( 'Password', 'wp-similar-basic-auth' ); ?></th>
@@ -42,7 +46,7 @@
         <th scope="row"><?php esc_html_e( 'Notes', 'wp-similar-basic-auth' ); ?></th>
         <td>
           <ul>
-            <li><?php esc_html_e( "- Only alphanumerics, numbers and symbols(! # ( ) * + , - . : ? @ ^ _ ~ ' \" [ ] space) are allowed.", 'wp-similar-basic-auth' ); ?></li>
+            <li><?php esc_html_e( "- User Name and Password: alphanumerics, numbers and symbols(! # ( ) * + , - . : ? @ ^ _ ~ ' \" [ ] space) are allowed.", 'wp-similar-basic-auth' ); ?></li>
         </td>
       </tr>
   	</table>

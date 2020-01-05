@@ -6,8 +6,8 @@ global $hax_wsba_input;
 // One error pattern for now.
 $error_message = $hax_wsba_login_page->errors->get_error_message( 'incorrect_user_or_pw' );
 
-$title   = get_option( 'hax_wsba_title' );
-$message = get_option( 'hax_wsba_message' );
+$title   = esc_attr( get_option( $hax_wsba_config->register_settings_title ) );
+$message = esc_attr( get_option( $hax_wsba_config->register_settings_message ) );
 ?>
 
 <html>
