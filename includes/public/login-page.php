@@ -56,7 +56,9 @@ class Hax_Wsba_Login_Page {
 		global $hax_wsba_input;
 
 		$html  = $hax_wsba_config->path_public_views . 'html-login-page.php';
-		$input = $hax_wsba_input->sanitize( $_POST );
+
+		$input     = $hax_wsba_input->sanitize( $_POST );
+		$validated = $hax_wsba_input->validate( $input );
 
 		$saved_user_name = get_option( $hax_wsba_config->register_settings_user_name );
 		$saved_password  = get_option( $hax_wsba_config->register_settings_password_text );
@@ -67,6 +69,11 @@ class Hax_Wsba_Login_Page {
 		// It suppose just activate plugin or forget set User Name or Password.
 		if ( $saved_user_name === false || $saved_password === false ) {
 			return 'data_does_not_exist'; // For phpunit
+		}
+
+		// [Fail] Deny login if validate failed.
+		if ( $validated !== 'pass') {
+			return 'validate failed';
 		}
 
 		// [Pass] If user has valid cookie, pass WSBA page.
