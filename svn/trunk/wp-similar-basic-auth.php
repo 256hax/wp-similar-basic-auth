@@ -55,8 +55,8 @@ class Hax_Wsba {
 		global $hax_wsba_config;
 
 		if ( is_admin() ) {
-			include_once( $hax_wsba_config->path_admin . 'admin-options-page.php' );
 			include_once( $hax_wsba_config->path_admin . 'admin-plugins-page.php' );
+			include_once( $hax_wsba_config->path_admin . 'admin-options-page.php' );
 		}
 	}
 
