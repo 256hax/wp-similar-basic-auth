@@ -66,10 +66,10 @@ class Hax_Wsba_Login_Page {
 
 		$hax_wsba_cookie = new Hax_Wsba_Cookie();
 
-		// [Pass] If not set User Name and Password, pass WSBA page.
+		// [Pass] If no set User Name and Password, pass WSBA page.
 		// It suppose just activate plugin or forget set User Name or Password.
-		if ( $saved_user_name === false || $saved_password === false ) {
-			return 'data_does_not_exist'; // For phpunit
+		if ( $saved_user_name === false || $saved_password === false || $saved_user_name === '' || $saved_password === '' ) {
+			return 'no_data'; // For phpunit
 		}
 
 		// [Fail] If failed input validation.

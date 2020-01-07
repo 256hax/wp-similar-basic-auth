@@ -32,6 +32,29 @@ class LoginPageTest extends WP_UnitTestCase {
 		global $hax_wsba_login_page;
 		$hax_wsba_login_page = new Hax_Wsba_Login_Page();
 
+		include_once( $hax_wsba_config->path_admin . 'admin-plugins-page.php' );
+		global $hax_wsba_admin_plugin_page;
+		$hax_wsba_admin_plugin_page = new Hax_Wsba_Admin_Plugins_Page();
+	}
+
+	/**
+	 * describe(object/method) : Hax_Wsba_Login_Page->html()
+	 *  context(conditions)    : "first activated plugin(= add wp_options with empty to DB)"
+	 *    it(expect/behavior)  : "go to WP Admin page"
+	 */
+	public function test_first_activated_plugin() {
+		global $hax_wsba_config;
+		global $hax_wsba_login_page;
+		global $hax_wsba_admin_plugin_page;
+
+		// Init wp_options
+		delete_option( $hax_wsba_config->register_settings_user_name );
+		delete_option( $hax_wsba_config->register_settings_password );
+		// For Activate plugin module
+		$hax_wsba_admin_plugin_page->action_activated_plugin();
+
+		$result = $hax_wsba_login_page->html();
+		$this->assertEquals( $result, 'no_data' );
 	}
 
 	/**
@@ -47,7 +70,7 @@ class LoginPageTest extends WP_UnitTestCase {
 		delete_option( $hax_wsba_config->register_settings_password );
 
 		$result = $hax_wsba_login_page->html();
-		$this->assertEquals( $result, 'data_does_not_exist' );
+		$this->assertEquals( $result, 'no_data' );
 	}
 
 	/**
