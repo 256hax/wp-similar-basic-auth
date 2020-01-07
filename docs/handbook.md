@@ -100,10 +100,18 @@ mac$ cd [plugin directory]
 mac$ cp [release file] svn/trunk/[destination directory]
 ```
 
-### Commit
+### Commit New File
 ```
 mac$ cd [svn directory of plugin]
 mac$ cd trunk
 mac$ svn add ./*
+mac$ svn commit -m "[write easy-to-understand and specific comment]"
+```
+
+### Commit Update File
+```
+mac$ cd [svn directory of plugin]
+mac$ cd trunk
+mac$ svn up [Update File]
 mac$ svn commit -m "[write easy-to-understand and specific comment]"
 ```

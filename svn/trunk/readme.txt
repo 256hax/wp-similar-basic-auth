@@ -30,15 +30,12 @@ This plugin doesn't replace Basic Authentication. If you can modify .htaccess or
 
 = Running Layer =
 
-| Layer
-| :---:
-| Fronts-end (ex: CSS, Javascript)
-| Application Plugin **<- This plugin**
-| Application (ex: WordPress)
-| Programming language (ex: PHP)
-| Middleware Web (ex: Apache, Nginx) **<- Basic Authentication**
-| Middleware DB
-| OS
+Fronts-end (ex: CSS, Javascript)
+Application Plugin **<- This plugin**
+Application (ex: WordPress)
+Programming language (ex: PHP)
+Middleware Web (ex: Apache, Nginx) **<- .htaccess Basic Authentication**
+Middleware DB / OS
 
 == Installation ==
 
@@ -88,7 +85,7 @@ But you can customize style by CSS. Use 'div id="wsba"'.
 
 == Changelog ==
 
-= 1.0 =
+= 0.1.0 =
 * First release.
 
 == Upgrade Notice ==
