@@ -91,3 +91,19 @@ $ makepot . languages/wp-similar-basic-auth.pot
 ## Other
 ### readme.txt Generator
 https://generatewp.com/plugin-readme/?clone=test-plugin-readme-txt-file
+
+
+## Commit to Plugin Repository
+### Copy release files
+```
+mac$ cd [plugin directory]
+mac$ cp [release file] svn/trunk/[destination directory]
+```
+
+### Commit
+```
+mac$ cd [svn directory of plugin]
+mac$ cd trunk
+mac$ svn add ./*
+mac$ svn commit -m "[write easy-to-understand and specific comment]"
+```

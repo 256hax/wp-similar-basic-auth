@@ -22,8 +22,11 @@ node_modules/
 *.sql
 *.sqlite
 
-# Don't ignore bin directory. Use "bin/install-wp-tests.sh" for phpunit.
+# Don't ignore bin directory. It need "bin/install-wp-tests.sh" for phpunit.
 # bin/
+
+# Repository
+.svn
 
 # Mac
 .DS_Store
