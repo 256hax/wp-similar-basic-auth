@@ -27,6 +27,7 @@ node_modules/
 
 # Repository
 .svn
+svn
 
 # Mac
 .DS_Store
