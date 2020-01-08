@@ -115,3 +115,11 @@ mac$ cd trunk
 mac$ svn up [Update File]
 mac$ svn commit -m "[write easy-to-understand and specific comment]"
 ```
+
+### Commit Release Version
+```
+mac$ cd [svn directory of plugin]
+mac$ svn cp trunk tags/[New Version ex:0.1.1]
+mac$ cd tags/[New Version ex:0.1.1]
+mac$ svn commit -m "[write easy-to-understand and specific comment]"
+```
