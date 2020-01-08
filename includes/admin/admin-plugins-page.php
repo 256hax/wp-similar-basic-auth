@@ -8,19 +8,24 @@
 class Hax_Wsba_Admin_Plugins_Page {
 
 	function __construct() {
-		add_filter( 'plugin_action_links', array( $this, 'plugin_settings_link' ) );
+		global $hax_wsba_config;
+
+		$filter_name = "plugin_action_links_{$hax_wsba_config->naming_text_domain}/{$hax_wsba_config->naming_text_domain}.php";
+		// => 'plugin_action_links_wp-similar-basic-auth/wp-similar-basic-auth.php'
+
+		add_filter( $filter_name, array( $this, 'plugin_settings_link' ));
 		add_action( 'activated_plugin', array($this, 'action_activated_plugin') );
 	}
 
 	// Add Settings menu in plugins page
-	function plugin_settings_link( $link ) {
+	function plugin_settings_link( $links ) {
 		global $hax_wsba_config;
 
 		$url = admin_url( 'options-general.php?page=' . $hax_wsba_config->naming_plugin_submenu_slug );
-		$url = '<a href="' . esc_url( $url ) . '">' . __( 'Settings' ) . '</a>';
+		$href = '<a href="' . esc_url( $url ) . '">' . __( 'Settings' ) . '</a>';
 
-		array_unshift( $link, $url ); // Settings link first For order
-		return $link;
+		array_unshift( $links, $href ); // Settings link first For order
+		return $links;
 	}
 
 	public function action_activated_plugin() {

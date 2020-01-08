@@ -20,12 +20,14 @@ class Hax_Wsba_Admin_Options_Page {
 	// [Call No.5]
 	// Add WSBA settings menu in "Settings" menu
 	function add_admin_menu() {
+		global $hax_wsba_config;
+
 		// Page Hook Suffix: https://codex.wordpress.org/Adding_Administration_Menus#Page_Hook_Suffix
 		$hook_suffix = add_options_page(
 			'WP Similar Basic Auth', // $page_title
 			'WP Similar Basic Auth', // $menu_title
 			'manage_options', // $capability. It must be "manage_options" if use Settings API.
-			'hax-wsba-submenu', // $menu_slug
+			$hax_wsba_config->naming_plugin_submenu_slug, // $menu_slug
 			array( $this, 'html' ) // $function
 		);
 

@@ -45,7 +45,7 @@ class Hax_Wsba {
 	function load_plugin_textdomain() {
 		global $hax_wsba_config;
 
-		load_plugin_textdomain( 'wp-similar-basic-auth', false, $hax_wsba_config->naming_plugin_text_domain );
+		load_plugin_textdomain( $hax_wsba_config->naming_text_domain, false, $hax_wsba_config->path_rel_languages );
 	}
 
 	/**

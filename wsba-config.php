@@ -12,11 +12,12 @@ class Hax_Wsba_Config {
 		$this->wp_env = '';
 
 		/*--- Naming ---*/
+		$this->naming_text_domain         = 'wp-similar-basic-auth';
 		$this->naming_plugin_prefix       = 'hax_wsba';
-		$this->naming_plugin_text_domain  = dirname( plugin_basename( __FILE__ ) ) . '/languages/';
 		$this->naming_plugin_submenu_slug = 'hax-wsba-submenu';
 
 		/*--- File Path ---*/
+		$this->path_rel_languages = $this->naming_text_domain . '/languages/';
 		$this->path_includes      = plugin_dir_path( __FILE__ ) . 'includes/';
 		$this->path_admin         = plugin_dir_path( __FILE__ ) . 'includes/admin/';
 		$this->path_admin_views   = plugin_dir_path( __FILE__ ) . 'includes/admin/views/';
