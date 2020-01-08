@@ -7,7 +7,7 @@
  * Author URI:      https://twitter.com/256hax
  * Text Domain:     wp-similar-basic-auth
  * Domain Path:     /languages
- * Version:         0.1.1
+ * Version:         0.1.0
  *
  * @package Wp_Similar_Basic_Auth
  *

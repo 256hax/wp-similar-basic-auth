@@ -85,8 +85,4 @@ But you can customize style by CSS. Use 'div id="wsba"'.
 
 == Changelog ==
 
-= 0.1.0 =
-* First release.
-
-== Upgrade Notice ==
-* none
+See the [release history](https://github.com/256hax/wp-similar-basic-auth/releases).
