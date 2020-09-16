@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/256hax/wp-similar-basic-auth.svg?branch=master)](https://travis-ci.org/256hax/wp-similar-basic-auth)
+[![Build Status](https://travis-ci.com/256hax/wp-similar-basic-auth.svg?branch=master)](https://travis-ci.com/256hax/wp-similar-basic-auth)
 
 WP Similar Basic Auth is Protect WordPress admin page on similar Basic Auth without .htaccess or ssl.conf.
 
