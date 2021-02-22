@@ -126,7 +126,9 @@ mac$ svn commit -m "[write easy-to-understand and specific comment]"
 ```
 
 ### Update Tested WP Version
+```
 mac$ cd [svn directory of plugin]
 mac$ cd trunk
 mac$ svn up [Update File]
 mac$ svn commit -m "[write Comment]"
+```
