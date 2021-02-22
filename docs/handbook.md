@@ -93,7 +93,7 @@ $ makepot . languages/wp-similar-basic-auth.pot
 https://generatewp.com/plugin-readme/?clone=test-plugin-readme-txt-file
 
 
-## Commit to Plugin Repository
+## Commit to Plugin Repository on WordPress.org
 ### Copy release files
 ```
 mac$ cd [plugin directory]
@@ -114,6 +114,7 @@ mac$ cd [svn directory of plugin]
 mac$ cd trunk
 mac$ svn up [Update File]
 mac$ svn commit -m "[write easy-to-understand and specific comment]"
+mac$ [Authentication Wordpress.org (Input Password)]
 ```
 
 ### Commit Release Version
@@ -123,3 +124,9 @@ mac$ svn cp trunk tags/[New Version ex:0.1.1]
 mac$ cd tags/[New Version ex:0.1.1]
 mac$ svn commit -m "[write easy-to-understand and specific comment]"
 ```
+
+### Update Tested WP Version
+mac$ cd [svn directory of plugin]
+mac$ cd trunk
+mac$ svn up [Update File]
+mac$ svn commit -m "[write Comment]"
