@@ -129,6 +129,9 @@ mac$ svn commit -m "[write easy-to-understand and specific comment]"
 ```
 mac$ cd [svn directory of plugin]
 mac$ cd trunk
-mac$ svn up [Update File]
-mac$ svn commit -m "[write Comment]"
+mac$ vi readme.txt
+     rewrite -> Tested up to: [Write New Tested up to version]
+mac$ svn up readme.txt
+mac$ svn commit -m "[docs: Rewrite Test up to WP version]"
+mac$ [Authentication Wordpress.org (Input Password)]
 ```
