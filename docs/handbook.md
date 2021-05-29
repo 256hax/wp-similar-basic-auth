@@ -133,5 +133,51 @@ mac$ vi readme.txt
      rewrite -> Tested up to: [Write New Tested up to version]
 mac$ svn up readme.txt
 mac$ svn commit -m "[docs: Rewrite Test up to WP version]"
-mac$ [Authentication Wordpress.org (Input Password)]
+```
+
+And then
+
+```
+Updating 'readme.txt':
+Revision xxxxxxxxx.
+
+mac$ svn commit -m "docs: Rewrite Tested up to WP version"
+Authentication realm: <https://plugins.svn.wordpress.org:443> Use your WordPress.org login
+Password for '[YOUR mac]]': ***********
+
+Authentication realm: <https://plugins.svn.wordpress.org:443> Use your WordPress.org login
+user: [WP USER ACCOUNT]
+Password for '[WP USER ACCOUNT]': **********
+
+Adding              readme.txt
+Transmitting file data ....done
+Committing transaction...
+Committed revision xxxxxxxxx.
+```
+
+## Trouble Shooting
+### svn: E155007: None of the targets are working copies
+Check .svn file exist.
+
+```
+mac$ cd [svn directory of plugin]
+
+mac$ ls -l svn/
+total 0
+drwxr-xr-x@  7 user  staff  224  5 29 13:14 .
+drwxr-xr-x@ 21 user  staff  672  5 29 13:00 ..
+drwxr-xr-x   9 user  staff  288  5 29 12:58 .svn
+drwxr-xr-x   9 user  staff  288  5 29 12:58 assets
+drwxr-xr-x   2 user  staff   64  5 29 12:58 branches
+drwxr-xr-x   4 user  staff  128  5 29 12:58 tags
+drwxr-xr-x  10 user  staff  320  5 29 13:00 trunk
+```
+
+If it dosen't exist, checkout again repository.
+ex)[WP Similar Basic Auth](https://plugins.svn.wordpress.org/wp-similar-basic-auth/)
+
+```
+mac$ cd [svn directory of plugin]
+mac$ mv svn svn-backup
+mac$ svn checkout https://plugins.svn.wordpress.org/wp-similar-basic-auth/
 ```

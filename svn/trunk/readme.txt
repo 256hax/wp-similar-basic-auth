@@ -3,7 +3,7 @@ Contributors: 256hax
 Tags: password, login, security, auth, basic auth, .htaccess, kusanagi
 Donate link: none
 Requires at least: 5.0
-Tested up to: 5.6.1
+Tested up to: 5.7.2
 Requires PHP: 5.6
 Stable tag: 1.0
 License: GPLv2 or later
